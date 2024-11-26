@@ -64,7 +64,21 @@ public class Cart {
 			System.out.println("- " + dvd.getTitle() + "---Cost: " + dvd.getCost());
 		}
 	}
-
+	
+	//6.Open the Cart class
+	public void printCart() {
+		 int i=1;
+		 System.out.println("***********************CART***********************");
+		 System.out.println("Ordered Items:");
+		 for (DigitalVideoDisc dvd : itemsOrdered) {
+			 System.out.println(i + ". "+ dvd.toString()+ "$");
+			 i++;
+		 }
+		 System.out.println("Total cost: " + this.totalCost());
+		 System.out.println("**************************************************");
+	}
+	
+	
 	public void removeDigitalVideoDisc(DigitalVideoDisc dvd) {
 		if (itemsOrdered.remove(dvd)) {
 			qtyOrdered--;
