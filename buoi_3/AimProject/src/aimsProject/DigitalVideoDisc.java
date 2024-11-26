@@ -7,6 +7,14 @@ public class DigitalVideoDisc {
 	private int length;
 	private float cost;
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	//5.Classifier Member and Instance Member
 	private static int nbDigitalVideoDiscs = 0;
 	private int id;

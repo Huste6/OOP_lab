@@ -22,5 +22,7 @@ public class aim {
 		System.out.println("Total cost is: ");
 		System.out.println(anOrder.totalCost());
 		
+		//test search cart
+		anOrder.searchCart("The lion King");
 	}
 }
