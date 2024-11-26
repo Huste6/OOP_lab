@@ -77,4 +77,8 @@ public class DigitalVideoDisc {
 		this.length = length;
 		this.id = nbDigitalVideoDiscs++;
 	}
+	
+	public String toString() {
+		return this.getTitle() + " - " + this.getCategory() + " - " + this.getDirector() + " - " + this.getLength() + " : " + this.getCost();
+	}
 }
