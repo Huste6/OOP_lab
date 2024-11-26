@@ -1,0 +1,16 @@
+1. Java là ngôn ngữ truyền tham trị (Pass by Value) hay truyền tham chiếu (Pass by Reference)?
+    Java là một ngôn ngữ chỉ truyền tham trị (Pass by Value), không phải truyền tham chiếu (Pass by Reference).
+
+2. Sau khi gọi phương thức swap(), tại sao tiêu đề của hai đối tượng vẫn không thay đổi?
+
+    Sau khi gọi phương thức swap(), tiêu đề (title) của hai đối tượng vẫn không thay đổi bởi vì phương thức swap() chỉ thực hiện việc hoán đổi tham chiếu (references) tới các đối tượng, chứ không thay đổi nội dung bên trong của các đối tượng đó.
+Cụ thể:
+    Khi bạn gọi swap(o1, o2), chỉ có tham chiếu của o1 và o2 trong phạm vi của phương thức swap() được hoán đổi với nhau.
+    Tuy nhiên, tham chiếu gốc (ở bên ngoài phương thức) của o1 và o2 không bị ảnh hưởng, vì Java sử dụng cơ chế truyền tham trị (pass by value) cho các tham số. Điều này có nghĩa là bản sao của tham chiếu được truyền vào, không phải tham chiếu thực sự.
+=> Do đó, sau khi gọi swap(), tiêu đề của các đối tượng mà o1 và o2 trỏ đến vẫn không thay đổi.
+
+3. Sau khi gọi phương thức changeTitle(), tại sao tiêu đề của JungleDVD bị thay đổi?
+
+    Sau khi gọi phương thức changeTitle(), tiêu đề của JungleDVD bị thay đổi bởi vì phương thức này sử dụng phương thức setTitle(title) để thay đổi trực tiếp tiêu đề của đối tượng. Khi bạn gọi setTitle(title) trên đối tượng, bạn đang thao tác trực tiếp trên nội dung của đối tượng đó trong bộ nhớ.
+=> Tiêu đề của đối tượng ban đầu bị thay đổi thông qua setTitle(title). 
+
