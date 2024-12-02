@@ -1,9 +1,9 @@
-package hust.soict.dsai.aims;
+package hust.soict.dsai.test.cart;
 
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 
-public class aim {
+public class cartTest {
 	public static void main(String[] args) {
 		Cart anOrder = new Cart();
 
@@ -15,17 +15,7 @@ public class aim {
 
 		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
 		anOrder.addDigitalVideoDisc(dvd3);
-
-		System.out.println("----------------------------");
-		System.out.println("Total cost is: ");
-		System.out.println(anOrder.totalCost());
-
-		System.out.println("----------------------------");
-		anOrder.removeDigitalVideoDisc(dvd3);
-		System.out.println("Total cost is: ");
-		System.out.println(anOrder.totalCost());
 		
-		//test search cart
-		anOrder.searchCart("The lion King");
+		anOrder.printCart();
 	}
 }
