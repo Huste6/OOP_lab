@@ -5,31 +5,42 @@ public abstract class Media {
 	private String title;
 	private String category;
 	private float cost;
-	
-	//getter and setter
+
+	// getter and setter
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getCategory() {
 		return category;
 	}
+
 	public void setCategory(String category) {
 		this.category = category;
 	}
+
 	public float getCost() {
 		return cost;
 	}
+
 	public void setCost(float cost) {
 		this.cost = cost;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Media [id=" + id + ", title=" + title + ", category=" + category + ", cost=" + cost + "]";
+	}
 }
