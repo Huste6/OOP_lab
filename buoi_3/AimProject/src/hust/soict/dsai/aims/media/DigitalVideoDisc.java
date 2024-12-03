@@ -4,8 +4,23 @@ public class DigitalVideoDisc extends Disc implements Playable {
 	// 5.Classifier Member and Instance Member
 	private static int nbDigitalVideoDiscs = 0;
 
-	public DigitalVideoDisc(String title, String category, float cost, int length, String director) {
+	public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
 		super(title, category, cost, length, director);
+		nbDigitalVideoDiscs++;
+	}
+
+	public DigitalVideoDisc(String title) {
+		super(title, "", 0, 0, "");
+		nbDigitalVideoDiscs++;
+	}
+
+	public DigitalVideoDisc(String title, String category, float cost) {
+		super(title, category, cost, 0, "");
+		nbDigitalVideoDiscs++;
+	}
+
+	public DigitalVideoDisc(String title, String category, String director, float cost) {
+		super(title, category, cost, 0, director);
 		nbDigitalVideoDiscs++;
 	}
 

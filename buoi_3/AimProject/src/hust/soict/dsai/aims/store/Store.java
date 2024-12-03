@@ -90,4 +90,26 @@ public class Store {
 		}
 		System.out.println("---------------------------------------");
 	}
+
+	// search store by title
+	public Media search(String title) {
+		for (Media m : itemsStore) {
+			if (m.getTitle().equalsIgnoreCase(title)) {
+				return m;
+			}
+		}
+		System.out.println("ko tìm thấy media với title: " + title);
+		return null;
+	}
+
+	// Tìm kiếm media theo ID
+	public Media search(int id) {
+		for (Media media : itemsStore) {
+			if (media.getId() == id) {
+				return media;
+			}
+		}
+		System.out.println("Không tìm thấy media với ID: " + id);
+		return null;
+	}
 }

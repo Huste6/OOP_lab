@@ -1,6 +1,7 @@
 package hust.soict.dsai.aims.cart;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import hust.soict.dsai.aims.media.Media;
 
@@ -28,6 +29,12 @@ public class Cart {
 		}
 	}
 
+	public void emptyCart() {
+		for (Media m : itemsOrdered) {
+			itemsOrdered.remove(m);
+		}
+	}
+
 	public float totalCost() {
 		float sum = 0.0f;
 		for (Media media : itemsOrdered) {
@@ -44,6 +51,45 @@ public class Cart {
 		}
 		System.out.println("Total Cost: " + totalCost() + "$");
 		System.out.println("---------------------------------------");
+	}
+
+	// tìm kiếm trong giỏ hàng
+	// tìm kiếm theo ID
+	public Media search(int id) {
+		for (Media media : itemsOrdered) {
+			if (media.getId() == id) {
+				System.out.println("Tìm thấy media: " + media.toString());
+				return media;
+			}
+		}
+		System.out.println("Không tìm thấy media với ID: " + id);
+		return null;
+	}
+
+	// tìm kiếm theo title
+	public Media search(String title) {
+		for (Media media : itemsOrdered) {
+			if (media.getTitle().equalsIgnoreCase(title)) {
+				System.out.println("Tìm thấy media: " + media.toString());
+				return media;
+			}
+		}
+		System.out.println("Không tìm thấy media với title: " + title);
+		return null;
+	}
+
+	public void sortCart(int command) {
+		if (command == 0) {
+			// Sort by title
+			itemsOrdered.sort(Comparator.comparing(Media::getTitle));
+			System.out.println("Giỏ hàng đã được sắp xếp theo title.");
+		} else if (command == 1) {
+			// Sort by cost
+			itemsOrdered.sort(Comparator.comparing(Media::getCost));
+			System.out.println("Giỏ hàng đã được sắp xếp theo cost.");
+		} else {
+			System.out.println("Lựa chọn sắp xếp không hợp lệ.");
+		}
 	}
 
 //	public void printOrder() {
